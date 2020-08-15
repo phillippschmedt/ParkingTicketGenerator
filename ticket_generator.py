@@ -11,7 +11,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 login_username = "phillipp.schmedt@gmail.com"
 login_password = "TZ66Bfm$Ky2fj5N%Z"
-chromedriver = 'C:\\libraries\chromedriver.exe'
+chromedriver = 'C:\\libraries\\chromedriver.exe'
 
 tickets_dir = os.getcwd() + r"\tickets"
 
@@ -19,7 +19,7 @@ temp_dir = os.getcwd() + r"\temp"
 
 ## Downloads ticket and returns path to ticket
 def create_ticket(visitdate, platenumber):
-    
+
     # Return Ticket Path if ticket already exists. 
     ticket_path = generate_ticket_path(visitdate, platenumber)
     if os.path.isfile(ticket_path):
