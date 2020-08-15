@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Tickets für Besucher von Phillipp</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Besucherticket-Generator</h1>
+
+    {% for field, errors in form.errors.items() %}
+        <div class="alert alert-error">
+        {{ ', '.join(errors) }}
+        </div>
+    {% endfor %}
+
+    <form action="{{ url_for('create_ticket_endpoint') }}" method="post">
+        Gewünschtes Datum: {{ form.date }}
+        Kennzeichen: {{ form.plate }}
+        {{ form.csrf_token }}
+    <button type="submit">Ticket erstellen</button>
+</form>
+</body>
+</html>
