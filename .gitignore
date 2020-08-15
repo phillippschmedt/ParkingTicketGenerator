@@ -1,3 +1,4 @@
 temp/
 tickets/
 __pycache__/
+venv/
