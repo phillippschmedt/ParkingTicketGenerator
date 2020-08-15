@@ -32,7 +32,7 @@ def create_ticket(visitdate, platenumber):
 
     # Chromedriver Settings
     options = webdriver.ChromeOptions()
-    #options.add_argument('headless')
+    options.add_argument('headless')
     options.add_argument('window-size=1200x600') # optional
       
     browser = webdriver.Chrome(executable_path=chromedriver, chrome_options=options)
