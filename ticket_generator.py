@@ -9,13 +9,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
+from chromedriver_py import binary_path # this will get you the path variable
+
 login_username = "phillipp.schmedt@gmail.com"
 login_password = "TZ66Bfm$Ky2fj5N%Z"
-chromedriver = 'C:\\libraries\\chromedriver.exe'
+chromedriver = binary_path
 
-tickets_dir = os.getcwd() + r"\tickets"
-
-temp_dir = os.getcwd() + r"\temp"
+tickets_dir = os.path.join(os.getcwd(), "tickets")
+temp_dir = os.path.join(os.getcwd(), "temp")
 
 ## Downloads ticket and returns path to ticket
 def create_ticket(visitdate, platenumber):
@@ -29,6 +30,7 @@ def create_ticket(visitdate, platenumber):
     shutil.rmtree(temp_dir, ignore_errors=True)
     os.mkdir(temp_dir)
 
+    # Chromedriver Settings
     options = webdriver.ChromeOptions()
     #options.add_argument('headless')
     options.add_argument('window-size=1200x600') # optional
