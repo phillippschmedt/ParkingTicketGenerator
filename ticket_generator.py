@@ -11,8 +11,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from chromedriver_py import binary_path # this will get you the path variable
 
-login_username = "phillipp.schmedt@gmail.com"
-login_password = "TZ66Bfm$Ky2fj5N%Z"
+login_username = "SET_EMAIL"
+login_password = "SET_PASSWORD"
 chromedriver = binary_path
 
 tickets_dir = os.path.join(os.getcwd(), "tickets")
